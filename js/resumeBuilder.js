@@ -143,4 +143,4 @@ var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses
 education.display();
 
 
-$("map-Div").append(goggleMap);
+$("mapDiv").append(goggleMap);
