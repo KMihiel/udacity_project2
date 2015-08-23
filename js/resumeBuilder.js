@@ -1,7 +1,7 @@
 var bio = {
   	"name": "Kimberly Mihiel",
   	"role": "Web Developer",
-  	"contact": {
+  	"contacts": {
   		"mobile": "570-269-6324",
   		"email": "kimberlymihiel@gmail.com",
   		"github": "Kmihiel",
@@ -17,7 +17,7 @@ var bio = {
   	"bioPic": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/005/07b/1f4/0f4ac32.jpg",
 };
 
-var workExperience = {
+var work = {
 	"jobs":{
 		"employer": "Techflex Inc.",
 		"title": "Graphic Designer and Web Developer",
@@ -63,11 +63,11 @@ bio.display = function() {
 		$("#header").append(formattedBioPic);
 	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 		$("#header").append(formattedWelcomeMsg);
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-	var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-	var formattedtwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-	var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	var formattedtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 	var allContacts = formattedMobile + formattedEmail + formattedGithub + formattedtwitter + formattedLocation;
 		$("#topContacts").append(allContacts);
 		$("#footerContacts").append(allContacts);
@@ -81,22 +81,22 @@ bio.display = function() {
 	};
 bio.display();
 
-workExperience.display = function(){
-	for(work in workExperience.jobs) {
+work.display = function(){
+	for(work in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 	}
-var formattedworkEmployer = HTMLworkEmployer.replace("%data%", workExperience.jobs.employer);
+var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer);
 	$("#workExperience").append(formattedworkEmployer);
-var formattedworkTitle = HTMLworkTitle.replace("%data%", workExperience.jobs.title);
+var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
 	$("#workExperience").append(formattedworkTitle);
-var formattedworkLocation = HTMLworkLocation.replace("%data%", workExperience.jobs.location);
+var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
 	$("#workExperience").append(formattedworkLocation);
-var formattedworkDates = HTMLworkDates.replace("%data%", workExperience.jobs.dates);
+var formattedworkDates = HTMLworkDates.replace("%data%", work.jobs.dates);
 	$("#workExperience").append(formattedworkDates);
-var formattedworkDescription = HTMLworkDescription.replace("%data%", workExperience.jobs.description);
+var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
 	$("#workExperience").append(formattedworkDescription);
 };
-workExperience.display();
+work.display();
 
 projects.display = function(){
 	for (project in projects.projects) {
